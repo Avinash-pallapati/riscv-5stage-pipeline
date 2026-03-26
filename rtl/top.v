@@ -47,5 +47,20 @@ register_file rf (
     .rd1(rd1),
     .rd2(rd2)
 );
+// ================= EX STAGE =================
 
+// ALU control (temporary fixed)
+wire [3:0] alu_control;
+assign alu_control = 4'b0000; // ADD for now
+
+// ALU output
+wire [31:0] alu_result;
+
+// ALU instance
+alu alu_inst (
+    .a(rd1),
+    .b(rd2),
+    .alu_control(alu_control),
+    .result(alu_result)
+);
 endmodule
