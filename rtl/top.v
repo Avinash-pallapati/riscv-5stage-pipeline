@@ -39,7 +39,7 @@ assign rd  = instruction[11:7];
 // Register File
 register_file rf (
     .clk(clk),
-    .we(0),          // no write yet
+    .we(1'b0),          // no write yet
     .rs1(rs1),
     .rs2(rs2),
     .rd(rd),
